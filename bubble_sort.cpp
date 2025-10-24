@@ -17,9 +17,11 @@ int main(){
     
     //Main Logic of bubble sort
     for(int i=n-1; i>=1; i--){
+        bool swapped = false;
         for(int j=0; j<=i-1; j++){
             if(arr[j]>arr[j+1]) swap(arr[j], arr[j+1]);
         }
+        if(!swapped)  break;
     }
 
     //Printing sorted array elements
