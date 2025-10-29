@@ -63,6 +63,35 @@ int longest_subarray(int arr[], int n, int sum_equal)
         }
     }
     return maxlen;
+
+    // Optimal solution -> takes O(2n) TC at worst case because 
+//inner loop not running in every iteration.
+int longest_subarray(int arr[], int n, int sum_equal)
+{
+    int right = 0;
+    int left = 0;
+    int maxlen = 0;
+    long long sum = arr[0];
+
+    while (right < n)
+    {
+        while (left <= right && sum > sum_equal)
+        {
+            sum -= arr[left];
+            left++;
+        }
+        if (sum == sum_equal)
+        {
+            maxlen = max(maxlen, right - left + 1);
+        }
+        right++;
+        if (right < n)
+        {
+            sum += arr[right];
+        }
+    }
+    return maxlen;
+}
 }
     }
     return length;
