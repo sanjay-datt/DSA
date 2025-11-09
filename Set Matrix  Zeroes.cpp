@@ -2,7 +2,8 @@
 //Do it in-place.
 
 
-// 1.Brute Force Approach
+// 1.Brute Force Approach --> Time Complexity: O((m × n) × (m + n) + (n x m)) - For each zero, 
+// we traverse its row and column
 #include <bits/stdc++.h>
 using namespace std;
 void set_matrix(vector<vector<int>> &arr, int n, int m)
