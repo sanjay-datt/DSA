@@ -31,16 +31,15 @@ int subarrays_xor(vector<int> arr, int target){
 
 
 //Optimal solution --> takes O(n) TC and O(n) SC.
+//one more solution 
 int subarrays_xor(vector<int> arr, int target){
     int count = 0, preXOR=0;
     map<int, int> mpp;
     mpp[0] = 1;
     for(int i =0; i<arr.size(); i++){
        preXOR ^= arr[i];
-       int required = preXOR ^ target;
-       if(preXOR == target) count++;
-       else if(mpp.find(required) != mpp.end())
-       count += mpp[required];
+       int x = preXOR ^ target;
+       count += mpp[x];
        mpp[preXOR]++;
     }
     return count;
